@@ -2,6 +2,10 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path');
 
+const isDev = process.env.NODE_ENV === 'development';
+
+
+
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
@@ -12,8 +16,13 @@ const createWindow = () => {
     }
   });
 
-  // Load the built index.html (adjust path as needed)
-  win.loadFile(path.join(__dirname, 'dist', 'index.html'));
+  if (isDev) {
+    win.loadURL('http://localhost:3000');
+  } else {
+    // Load the built index.html (adjust path as needed)
+    win.loadFile(path.join(__dirname, 'dist', 'index.html'));
+  }
+  
 };
 
 app.whenReady().then(() => {

@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "main.js",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
     "start": "electron-forge start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "publish": "electron-forge publish",
-    "build": "vite build"
+    "publish": "electron-forge publish"
   },
   "author": "Remilio Jackson",
   "license": "ISC",
@@ -25,11 +26,14 @@
     "@electron/fuses": "^1.8.0",
     "@vitejs/plugin-vue": "^5.2.1",
     "electron": "^35.0.0",
+    "sass": "^1.85.1",
     "vite": "^6.2.1"
   },
   "dependencies": {
+    "bulma": "^1.0.3",
     "electron-squirrel-startup": "^1.0.1",
     "update-electron-app": "^3.1.1",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.0"
   }
 }
